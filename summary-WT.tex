@@ -1,0 +1,137 @@
+% ----------------------- TODO ---------------------------
+% Change per hand-in
+\newcommand{\NUMBER}{1} % exercise set number
+\newcommand{\EXERCISES}{5} % number of exercises
+
+\newcommand{\COURSECODE}{AP3442}
+\newcommand{\TITLE}{Questions \& Answers 2022, WT}
+\newcommand{\STUDENTA}{Jeroen Sangers}
+\newcommand{\DEADLINE}{June 26th, 2022}
+\newcommand{\COURSE}{Quantum Hardware II}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{fontspec}
+
+
+\setmainfont{Baskerville Light}[
+	BoldFont	= Baskerville Bold ,
+	ItalicFont	= Baskerville Light-Italic
+]
+% Algorithm command
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% Matrix notation
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+% Margins
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Header and footer setup
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[L]{\TITLE}
+\fancyhead[C]{\STUDENTA}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[C]{\COURSE - Applied Physics}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+% Formatting of "title"
+\def\header#1#2{
+  \begin{center}
+    {\Large Exercise set}\\
+    {(Deadline #2)}
+  \end{center}
+}
+
+\newcommand{\qa}[2]{#1\\ \textit{#2}}
+
+\begin{document}
+\subsection*{Photon sources, qubits and detectors}
+\begin{enumerate}[label=(\alph*)]
+  \item \qa{Explain in detail two ways to create single photons. Elaborate on their advantages and difficulties.}{One way is by spontaneous emission from a single emitter like a trapped ion, quantum dot or single defect, with the downsides being: complex to set up, poor efficiency, low rates and bad coupling to fibres.\\ A second method is by using an attenuated laser pulse, these have a high probability of a emitting a single photon if photons are emitted. This is easier to make but has a low rate.}
+  \item \qa{Explain what is required to efficiently couple single photons from a single emitter into an optical fibre.}{A optical cavity around the emitter is needed such that the two-level system and the cavity are resonant. This way photons are emitted more frequently.}
+  \item \qa{Explain advantages and drawbacks of photon transmission using optical fibres or telescopic systems in free space.}{In a fibre the photon is trapped well enough such that it stays in the fibre but after about 10km the chance of the photon being absorbed by the fibre is 50\%. In free space the photon will not get absorbed but in a telescopic system there is diffraction so that it might be hard to get the photon where you want it to go.}
+  \item \qa{Explain how to create a time-bin qubit state using a single photon. How to make projections onto X and Z?}{A time-bin encoded qubit is made by having a single photon go through a MZ-interferometer letting it take two paths of which one is longer than the other creating either a superposition of early e and late l qubit states. Projections onto X and Z are made by letting the two qubit states travel through another interferometer this time delaying the early state, such that both states interfere again at a beamsplitter in the interferometer after which it can be detected at one of two detectors to map it onto a point of the Bloch sphere.}
+  \item \qa{What is spontaneous parametric downconversion? Elaborate on how it can be used to create entangled pairs of photons.}{Spontaneous parametric downconversion is a process which creates two lower energy photons of a single high photon. Due to momentum and energy conservation, the direction of travel and the colour of the new photons are known for both photons if it is known of one photon. This ambiguity in exact state, but connection between states can be exploited to create entangled states using further beamsplitters and wave-plates.}
+  \item \qa{Explain how to measure the autocorrelation coefficient $g^{(2)}(0)$, HOM interference, and perform projections onto Bell states using photons and linear optics.}{One can measure the autocorrelation coefficient by placing a beamsplitter with two detectors in the optical path, the coefficient is then given by the probability of two simultaneous clicks divided by the probability of two in time separated clicks. a coefficient smaller than 1 indicates non-classical photon sources and a value of 0 would indicate single photon sources.\\ HOM interference uses a similar setup but uses two photon sources, if both photons are indistinguishable from one another they will clump together in the beamsplitter and only click one detector.\\ Two states can then be projected onto bell states by letting the two states interfere in a beamsplitter and then splitting both outgoing beams in a polarized beamsplitter that splits vertical and horizontal components of the states onto two detectors, different clicks then determine bell states.}
+  \item \qa{If you were to make a Bell-state measurement with two photonic qubits, each of which travelled over a long optical fibre, would you rather choose polarization or time-bin encoding?}{So this question has to do with whether the photons are indistinguishable and if the states have the proper phases for subtraction. I would say time-binned qubits are better since here both the early and late bit always travel the same path after the beamsplitter and thus keep their relative phases.}
+  \item \qa{How can one detect individual photons? Give examples of different types of detectors and discuss important detector properties.}{There are scintilator devices that create an avalanche of electrons upon reaction with an incident photon. There are also supraconducting single-photon detectors, these work by measuring a change in resistance after a photon locally heats up a chip and breaks the superconductivity. The scintilator works for higher temperatures but has a slower response time and lower qunatum efficiency. For both the dark count is about the same. }
+\end{enumerate}
+
+\subsection*{Quantum key distribution}
+\begin{enumerate}[label=(\alph*)]
+  \item \qa{Explain a potential problem that may arise when using attenuated laser pulses instead of single photons for quantum key distribution.}{When using attenuated laser pulses the eavesdropper is able to capture one of the multiple photons of the number state into quantum memory, by blocking the channel for single photons the eavesdropper can get the same raw rate as the reciever.}
+  \item \qa{Elaborate on assumptions required to prove security in quantum key distribution. Discuss at least two implementations that require different assumptions.}{1) Quantum mechanics is correct, such that the outcomes are anticorrelated. 2) No information leaks from the labs of Bob and Alice. 3) The reciever has sufficiently good control over their devices. For E91 QKD we assume that measurement of the qubits is anti-correlated in the same basis. For device-independant QKD we assume information does not leak from the labs.}
+  \item \qa{What is a Trojan horse attack in QKD? Why is it dangerous, and what can you do to avoid it?}{A Trojan horse attack is when an eavesdropper send a strong photon into one of Alice's or Bob's labs where this photon might interfere with the qubit state and carry information of this state back out of the lab after reflection. A security measure against this kind of attack would be to implement sufficient optical isolation measures.}
+  \item \qa{Contrast QKD based on the creation and measurement of individual photons with QKD based on the creation and measurement of entangled photons.}{With individual photons the lab that prepares the state has to know the state before sending it, for entangled photons both labs can send and recieve state without knowing what they have and measure after.}
+  \item \qa{Why and how does MDI-QKD remove the risk of a detector blinding attack? What is difficult in the implementation of this QKD protocol?}{The removes the assumptions on the devices of Alice and Bob. The hard part is doing the Bell inequality tests.}
+\end{enumerate}
+
+\subsection*{Quantum repeaters, memory, and, networks}
+\begin{enumerate}[label=(\alph*)]
+  \item \qa{Discuss why it is impossible to use amplifiers to regenerate quantum data during transmission over lossy links.}{Due to the no cloning criteria it is impossible to recreate a packet of quantum information to send forward.}
+  \item \qa{What is the promise of a quantum repeater? Describe the underpinning principle.}{The promise of a quantum repeater is the ability to overcome the exponential scaling of loss of photon transmission over a quantum link. This would be done by not needing a single information carrying photon to fly over the entire link.}
+  \item \qa{Describe the elements required for building a quantum repeater.}{The elements needed for a quantum repeater are: quantum memory, to store intermediate states; detectors, to measure incoming photons on frequency bins; and; hardware to prepare and transmit new photons.}
+  \item \qa{Describe an experiment that overcame the repeaterless bound, i.e. managed to distribute secret bits using QKD more efficiently than what would have been possible using direct qubit transmission.}{A setup using spectral multiplexed fibres was able to successfully change the scaling of the entanglement distribution rate.}
+  \item \qa{Different elements of a quantum repeater may use photons of different wavelength. How would you pass quantum information from one to the other?}{Using quantum frequency conversion it's possible to use a high energetic photon and the information carrying photon to combine into a photon of desired frequency still carrying the quantum information. This is done using a non-linear crystal.}
+  \item \qa{What is the purpose of a quantum memory in a quantum repeater? Elaborate on some important properties of a quantum memory.}{Quantum memory serves to store full quantum states for later use in computation. Important properties are high storage and read-out fidelities as well as long coherence times.}
+  \item \qa{Which properties of rare-earth-doped crystals are exploited in the atomic frequency comb (AFC) quantum memory?}{The fact that when shined upon by a narrow frequency laser the electron population is pumped to an auxiliary state such that the rare-earth crystal has no electrons left in this ground state and becomes transparent for this wavelength. Doing this for multiple wavelengths creates the atomic frequency comb. For this we need: long-lived auxiliary states, these allow the population inversion; narrow-homogeneous line width, such that the laser only reacts with a narrow frequency band; and; inhomogeneously broadened transitions, this allows for some detuning.}
+  \item \qa{Describe the AFC quantum memory protocol}{After creating of an atomic frequency comb absorption will lead to a superposition state of a singal excited state corresponding to the frequency of the incident photon, this causes dephasing. After a time equal to the reciprocal of the comb frequency spacing the state rephases and emits the same photon with unity efficiency and fidelity}
+  \item \qa{What is entanglement swapping? Why is it important in a quantum repeater?}{Entanglement swapping is a protocol that allows two quantum nodes, Alice and Charlie, to create a heralded entangled state through an intermediary node Bob. It is important for quantum repeaters since it allows for the teleportation or transfer of quantum information between two not directly connected quantum nodes.}
+  \item \qa{List (and briefly explain) two applications of quantum networks}{One is the creation of secure quantum communication by the means of secure quantum key distribution. The second use is to build a large quantum sensor.}
+  \item \qa{What elements do you require for building a quantum network?}{Quantum channels, quantum channel switches, quantum repeaters, and, quantum end nodes.}
+  \item \qa{How can you create entanglement between a photon state and a NV spin state?}{By applying a read-out pulse the NV-centre will depending on its state either emit a photon or not. Letting this photon be used for quantum frequency conversion you get the quantum information of the first photon, entangled with the state of the NV centre, in a new photon at a desired frequency.}
+  \item \qa {What is the quantum link efficiency? What values are reasonable to expect with current technology?}{It is the rate of entanglement divided by the rate of decoherence and quantifies how effectively an entangled state can be preserved over timescales necessary to generate it and should thus be larger than 1 for a quantum network. A value for NV centres in 2018 was }$n_{eff}=8$ \textit{}
+  \item \qa{How would you build a quantum networks that spans the entire planet? Elaborate on your choice.}{Probably with the main infrastructure implemented with sattelites since here you can get long links and interference by a bad actor on these links would be hard. Then single space-to-earth links to connect clusters of computers.}
+\end{enumerate}
+
+\subsection*{Quantum sensing}
+\begin{enumerate}[label=(\alph*)]
+  \item \qa{Give two examples of properties that can be measured using single NV
+  centers.}{}
+  \item \qa{Explain how one could measure small changes of a magnetic field using a single NV center in the case of slow changes and in the case of oscillating changes.}{}
+  \item \qa{What is the difference between using a single absorber or an ensemble of absorbers for quantum sensing.}{}
+  \item \qa{Would you consider an atomic clock a quantum sensor? Why? Or why not?}{}
+  \item \qa{What makes NV centers special so that they can be used as quantum sensors over a large temperature range?}{}
+  \item \qa{Explain the difference of spin-state readout at a temperature close to absolute zero and at room temperature.}{}
+\end{enumerate}
+
+\subsection*{Linear optics and quantum computing}
+\begin{enumerate}[label=(\alph*)]
+  \item \qa{How does one-way quantum computing differ from the circuit-based paradigm?}{}
+  \item \qa{Why does nobody consider building a non-linear quantum computing?}{}
+  \item \qa{Explain how to create cluster states.}{}
+  \item \qa{Explain step-by-step which architecture may allow building a universal linear-optics quantum computer.}{}
+  \item \qa{Explain how to realize single qubit gates and controlled two-qubit gates using linear optics.}{}
+  \item \qa{What is boson sampling?}{}
+  \item \qa{How can one achieve scalability in linear optics?}{}
+\end{enumerate}
+
+\end{document}

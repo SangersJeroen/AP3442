@@ -1,0 +1,105 @@
+% ----------------------- TODO ---------------------------
+% Change per hand-in
+\newcommand{\NUMBER}{1} % exercise set number
+\newcommand{\EXERCISES}{5} % number of exercises
+
+\newcommand{\COURSECODE}{AP3442}
+\newcommand{\TITLE}{Questions \& Answers 2022, LV}
+\newcommand{\STUDENTA}{Jeroen Sangers - Applied Physics}
+\newcommand{\DEADLINE}{June 26th, 2022}
+\newcommand{\COURSE}{Quantum Hardware II}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{fontspec}
+
+
+\setmainfont{Baskerville Light}[
+	BoldFont	= Baskerville Bold ,
+	ItalicFont	= Baskerville Light-Italic
+]
+% Algorithm command
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% Matrix notation
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+% Margins
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Header and footer setup
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[L]{\TITLE}
+\fancyhead[C]{\STUDENTA}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[C]{\COURSE}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+% Formatting of "title"
+\def\header#1#2{
+  \begin{center}
+    {\Large Exercise set}\\
+    {(Deadline #2)}
+  \end{center}
+}
+
+\newcommand{\qa}[2]{#1\\ \textit{#2}}
+
+\begin{document}
+\subsection*{Quantum dots}
+\begin{enumerate}[label=(\alph*)]
+  \item \begin{enumerate}[label=(\roman*)]
+    \item \qa{How can individual electrons be trapped in semiconductor quantum dots?}{ans}
+    \item \qa{What are some common material platforms?}{ans}
+  \end{enumerate}
+
+  \item \begin{enumerate}[label=(\roman*)]
+    \item \qa{What does the charge stability diagram of a double quantum dot look like?}{ans.}
+    \item \qa{What physical effects do we see?}{ans.}
+    \item \qa{How can we measure a charge stability diagram?}{ans.}
+  \end{enumerate}
+
+  \item \qa{Explain how the state of a single electron spin in a quantum dot can be read out. What experimental conditions need to be met for the read-out to achieve high fidelity?}{}
+  \item \qa{Explain two methods for the coherent control of a single electron spin in a quantum dot. Discuss the advantages and disadvantages of both. Bonus: explain a third method.}{}
+  \item \qa{Explain two types of two-qubit gates between single-electron spin qubits in quantum dots. Discuss the advantages and disadvantages of both. Bonus: explain a third method.}{}
+  \item \begin{enumerate}[label=(\roman*)]
+    \item \qa{What are the limiting decoherence mechanism for single-spin qubits in quantum dots?}{}
+    \item \qa{How do they impact the fidelity of single-shot readout and of single- and two-qubit gates?}{}
+    \item \qa{How did the timescales and limiting mechanisms evolve over the years?}{}
+    \item \qa{To what extent can dynamical decoupling techniques extend the decoherence times?}{}
+    \item \qa{What does this tell us about the decoherence mechanisms?}{}
+  \end{enumerate}
+\end{enumerate}
+\subsection*{Nitrogen vacancy qubits}
+\subsection*{Superconducting qubits}
+\subsection*{Ion trap qubits}
+\subsection*{Adiabatic quantum computing}
+
+\end{document}
