@@ -36,6 +36,7 @@
 \usepackage{tikz}
 \usepackage{algpseudocode,algorithm,algorithmicx}
 \usepackage{fontspec}
+\usepackage{braket}
 
 
 \setmainfont{Baskerville Light}[
@@ -115,23 +116,23 @@
 \subsection*{Quantum sensing}
 \begin{enumerate}[label=(\alph*)]
   \item \qa{Give two examples of properties that can be measured using single NV
-  centers.}{}
-  \item \qa{Explain how one could measure small changes of a magnetic field using a single NV center in the case of slow changes and in the case of oscillating changes.}{}
-  \item \qa{What is the difference between using a single absorber or an ensemble of absorbers for quantum sensing.}{}
-  \item \qa{Would you consider an atomic clock a quantum sensor? Why? Or why not?}{}
-  \item \qa{What makes NV centers special so that they can be used as quantum sensors over a large temperature range?}{}
-  \item \qa{Explain the difference of spin-state readout at a temperature close to absolute zero and at room temperature.}{}
+  centers.}{Using nitrogen vacancy centres one is able to measure magnetic fields by using a Ramsey sequence, using a similar technique a NV-centre can be used to measure electric fields and local stress and strain.}
+  \item \qa{Explain how one could measure small changes of a magnetic field using a single NV centre in the case of slow changes and in the case of oscillating changes.}{For small changes in magnetic field one can use a Ramsey sequence, this works since the magnetic field rotates the Bloch vector around the sphere. For high frequencies the Ramsey sequence is inefficient and needs to be supplemented with intermittent extra} $\pi_X$ \textit{and} $\pi_Y$ \textit{pulses to lock onto a frequency.}
+  \item \qa{What is the difference between using a single absorber or an ensemble of absorbers for quantum sensing.}{Extra NV-centres allow for enhanced sensing protocols such as: Improved readout; Memory, for the use of correlation spectroscopy; Quantum error correction; and; Phase estimation.}
+  \item \qa{Would you consider an atomic clock a quantum sensor? Why? Or why not?}{I would not since atomic clocks exploit quantum effects wit non-quantum sensors.}
+  \item \qa{What makes NV centres special so that they can be used as quantum sensors over a large temperature range?}{That you can use the ancillary electron spin to gather information on the nuclear spin and repeat this measurement to keep gathering information.}
+  \item \qa{Explain the difference of spin-state readout at a temperature close to absolute zero and at room temperature.}{At low temperatures the energy levels are well-defined and allow read-out using a read-out pulse and a fluorescence. For higher temperatures these energy difference splitting are no longer well-defined, and you need to perform multiple readouts of the electron spin that you intermittently couple to the nuclear spin.}
 \end{enumerate}
 
 \subsection*{Linear optics and quantum computing}
 \begin{enumerate}[label=(\alph*)]
-  \item \qa{How does one-way quantum computing differ from the circuit-based paradigm?}{}
-  \item \qa{Why does nobody consider building a non-linear quantum computing?}{}
-  \item \qa{Explain how to create cluster states.}{}
-  \item \qa{Explain step-by-step which architecture may allow building a universal linear-optics quantum computer.}{}
-  \item \qa{Explain how to realize single qubit gates and controlled two-qubit gates using linear optics.}{}
-  \item \qa{What is boson sampling?}{}
-  \item \qa{How can one achieve scalability in linear optics?}{}
+  \item \qa{How does one-way quantum computing differ from the circuit-based paradigm?}{In one-way quantum computing one starts with an entangled cluster state whereas in ciruit-based quantum computing one starts with qubits in separable states and then applies single-qubit and controlled two-qubit gates.}
+  \item \qa{Why does nobody consider building a non-linear quantum computing?}{Because you would need more than a single photon to get the non-linear effects you would want to use.}
+  \item \qa{Explain how to create cluster states.}{Larger clusters can be made from smaller clusters by using controlled-not gates. A single cluster is made by preparing all qubits in the + state and then apply a controlled-Z gate between all connected pairs.}
+  \item \qa{Explain step-by-step which architecture may allow building a universal linear-optics quantum computer.}{Using spontaneous parametric downconversion a group was able to create probabilistically a linear\textsuperscript{4} or horeseshoe\textsuperscript{4} cluster.}
+  \item \qa{Explain how to realize single qubit gates and controlled two-qubit gates using linear optics.}{Single- and multi-qubit gates are realized by measuring states in an arbitrary superposition basis, this results in a single qubit rotation followed by a Hadamard gate. } $\ket{\pm \alpha}_j = \left( \ket{0}_j \pm \ket{1}_j \right)/\sqrt{2}$ \textit{yields} $R_z(\alpha)=\exp{-i \alpha \sigma_z /2}$ \textit{}
+  \item \qa{What is boson sampling?}{It is the method of trying to find the probability distribution of bosons scattered by a linear interferometer and should be classically hard but easy to compute using a photonic computer.}
+  \item \qa{How can one achieve scalability in linear optics?}{By etching circuit designs in glass with a intense femtosecond laser beam to decrease the footprint of a circuit.}
 \end{enumerate}
 
 \end{document}
