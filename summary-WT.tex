@@ -37,6 +37,8 @@
 \usepackage{algpseudocode,algorithm,algorithmicx}
 \usepackage{fontspec}
 \usepackage{braket}
+\usepackage{xcolor}
+
 
 
 \setmainfont{Baskerville Light}[
@@ -74,6 +76,10 @@
 \newcommand{\qa}[2]{#1\\ \textit{#2}}
 
 \begin{document}
+
+{\color{blue} The answers given below were \textbf{NOT} checked by TAs or the lecturers!\\
+Contribution would be welcomed by leaving a message here or on \href{https://github.com/SangersJeroen/AP3442}{ the repository (click here)} }
+
 \subsection*{Photon sources, qubits and detectors}
 \begin{enumerate}[label=(\alph*)]
   \item \qa{Explain in detail two ways to create single photons. Elaborate on their advantages and difficulties.}{One way is by spontaneous emission from a single emitter like a trapped ion, quantum dot or single defect, with the downsides being: complex to set up, poor efficiency, low rates and bad coupling to fibres.\\ A second method is by using an attenuated laser pulse, these have a high probability of a emitting a single photon if photons are emitted. This is easier to make but has a low rate.}
