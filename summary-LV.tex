@@ -5,9 +5,9 @@
 
 \newcommand{\COURSECODE}{AP3442}
 \newcommand{\TITLE}{Questions \& Answers 2022, LV}
-\newcommand{\STUDENTA}{Jeroen Sangers - Applied Physics}
+\newcommand{\STUDENTA}{Jeroen Sangers}
 \newcommand{\DEADLINE}{June 26th, 2022}
-\newcommand{\COURSE}{Quantum Hardware II}
+\newcommand{\COURSE}{Quantum Hardware II - Applied Physics}
 % ----------------------- TODO ---------------------------
 
 \documentclass[a4paper]{scrartcl}
@@ -76,30 +76,88 @@
 \subsection*{Quantum dots}
 \begin{enumerate}[label=(\alph*)]
   \item \begin{enumerate}[label=(\roman*)]
-    \item \qa{How can individual electrons be trapped in semiconductor quantum dots?}{ans}
-    \item \qa{What are some common material platforms?}{ans}
+    \item \qa{How can individual electrons be trapped in semiconductor quantum dots?}{Using back gates you can fabricate a confining potential in a two-dimensional electron gas. If this fabricated quantum dot is small enough the charging energy required for a second electron to jump in is smaller than the thermal energy available.}
+    \item \qa{What are some common material platforms?}{Common materials are a Gallium-Arsenide and Aluminium-Gallium-Arsenide interface. If the materials have a different bandgap then a two-dimensional electron gas will be formed. Nowadays, they use Silicon or Germanium.}
   \end{enumerate}
 
   \item \begin{enumerate}[label=(\roman*)]
-    \item \qa{What does the charge stability diagram of a double quantum dot look like?}{ans.}
-    \item \qa{What physical effects do we see?}{ans.}
-    \item \qa{How can we measure a charge stability diagram?}{ans.}
+    \item \qa{What does the charge stability diagram of a double quantum dot look like?}{For zero inter-dot capacitance it has horizontally en vertically evenly spaced lines. If there is inter-dot capacitance the squares made by the previously straight lines turn in to hexagons due to the presence of an electron in dot A changing the energy level in dot B. The lines are now slanted as well.}
+    \item \qa{What physical effects do we see?}{We see the inter-dot capacitances, the number of electrons in each dot, and, the currents for certain gate voltages.}
+    \item \qa{How can we measure a charge stability diagram?}{One can measure the current through a third closely placed quantum dot since this dot will also be affected by the number of electrons in the first two quantum dots. Measuring the current through the third quantum dot whilst sweeping the gate voltages of the other two quantum dots allows us to construct the charge stability diagram.}
   \end{enumerate}
 
-  \item \qa{Explain how the state of a single electron spin in a quantum dot can be read out. What experimental conditions need to be met for the read-out to achieve high fidelity?}{}
-  \item \qa{Explain two methods for the coherent control of a single electron spin in a quantum dot. Discuss the advantages and disadvantages of both. Bonus: explain a third method.}{}
-  \item \qa{Explain two types of two-qubit gates between single-electron spin qubits in quantum dots. Discuss the advantages and disadvantages of both. Bonus: explain a third method.}{}
+  \item \qa{Explain how the state of a single electron spin in a quantum dot can be read out. What experimental conditions need to be met for the read-out to achieve high fidelity?}{Since the energies of spin-up and spin-down electrons are different it is possible to raise the gate voltage of the quantum dot such that one of the spin states is above the Fermi-energy level of the source so that the electron will jump out. This transition can be monitored by looking at the current through a quantum point contact given that we can measure currents in the nano-amperes.}
+  \item \qa{Explain two methods for the coherent control of a single electron spin in a quantum dot. Discuss the advantages and disadvantages of both. Bonus: explain a third method.}{One way is by using an extra oscillating magnetic perpendicular to the static magnetic field, this oscillating field has a component that couples to the electron spin and causes rabi-oscillations. Another way is by using the electric-dipole interaction, using this method you put an oscillating electric signal on one of the electrodes to pull and push the electron in the well such that it sees an apparent magnetic field that induces rabi-oscillations. The second method makes it easier to address single atoms and allows for all-electrical control. A third way for electrical driving is using a magnetic field gradient from a small magnetic material, this however causes dephasing since the spin is now coupled to the charge.}
+  \item \qa{Explain two types of two-qubit gates between single-electron spin qubits in quantum dots. Discuss the advantages and disadvantages of both. Bonus: explain a third method.}{You can control the qubits and thus implement gates by either driving electrically by changing the voltage on a gate or you can apply gate voltage pulses. In addition, you can also implement magnetic driving by passing a current through a wire next to the qubits.}
   \item \begin{enumerate}[label=(\roman*)]
-    \item \qa{What are the limiting decoherence mechanism for single-spin qubits in quantum dots?}{}
-    \item \qa{How do they impact the fidelity of single-shot readout and of single- and two-qubit gates?}{}
-    \item \qa{How did the timescales and limiting mechanisms evolve over the years?}{}
-    \item \qa{To what extent can dynamical decoupling techniques extend the decoherence times?}{}
-    \item \qa{What does this tell us about the decoherence mechanisms?}{}
+    \item \qa{What are the limiting decoherence mechanism for single-spin qubits in quantum dots?}{The limiting decoherence mechanism is spin dephasing characterised by T2*.}
+    \item \qa{How do they impact the fidelity of single-shot readout and of single- and two-qubit gates?}{If the spin state decays before read-out you have no way of knowing what the spin state was.}
+    \item \qa{How did the timescales and limiting mechanisms evolve over the years?}{The timescales got longer by 100}$\times$ \textit{twice by eliminating excess nuclear spins in the substrate. T2* times are now up to 250 microsceonds with a pure Silicon-28 substrate.}
+    \item \qa{To what extent can dynamical decoupling techniques extend the decoherence times?}{They reduce the coupling between the qubit spin and the nuclear spin of the substrate, this removes the randomness in felt magnetic field.}
+    \item \qa{What does this tell us about the decoherence mechanisms?}{That random noise magnetic fields cause decoherence.}
+  \end{enumerate}
+  \item \begin{enumerate}[label=(\roman*)]
+    \item \qa{What are the limiting energy relaxation mechanisms for single-spin qubits in quantum dots?}{Heisenberg exchange and Ising exchange, in the first the X1X2 and Y1Y2 interaction are taken into account and only mater if the spin-level splitting of both qubits are similar.}
+    \item \qa{How do they impact the fidelity of single-shot readout and of single- and two-qubit gates?}{They decrease the fidelity since they allow electron spins to flip and tunnel to the other quantum dots.}
+    \item \qa{How did the timescales and limiting mechanisms evolve over the years?}{?}
+  \end{enumerate}
+  \item \begin{enumerate}[label=(\roman*)]
+    \item \qa{What are the main challenges for scaling up spin qubits in quantum dots?}{Bringing in the control electronic wires to the qubits you want to control.}
+    \item \qa{What main ideas exist for overcoming these challenges?}{Big monolithic arrays of qubits.}
   \end{enumerate}
 \end{enumerate}
+
 \subsection*{Nitrogen vacancy qubits}
+\begin{enumerate}
+  \item \qa{How is the NV electron spin qubit formed?}{}
+  \item \qa{How can the NV electron spin be read out? How is it manipulated?}{}
+  \item \qa{How can we perform two-qubit gates between two NV electron spin qubits?}{}
+  \item \qa{What is the limiting decoherence mechanism for the NV electron spin qubit?}{}
+  \item \qa{What additional qubits can be provided within a single NV center? (N15/14,C13)}{}
+  \item \qa{How can we extend qubit coherence by DD? Why does this work?}{}
+  \item \qa{How can we (selectively) control a 13C nuclear spin by flipping the electron spin back and forth? How can we entangle the electron spin and a 13C spin?}{}
+  \item \qa{What are the main challenges in scaling up? What ideas exist for overcoming the challenges?}{}
+\end{enumerate}
+
 \subsection*{Superconducting qubits}
+\begin{enumerate}
+  \item \qa{Conceptually describe the transmon qubit, the role of its components and the relevant energy scales.}{}
+  \item \qa{How are modern superconducting made, and what do they look like?}{}
+  \item \qa{How is single-qubit control of transmon qubits achieved (three axis)?}{}
+  \item \qa{What is the most straightforward way of coupling two superconducting qubits?}{}
+  \item \qa{What is the Hamiltonian of a superconducting qubit plus resonator system? Which roles do microwave resonators play in superconducting qubit experiments, and which operating regimes do we distinguish?}{}
+  \item \qa{Explain the concept of the vacuum Rabi splitting and vacuum Rabi oscillations. }{}
+  \item \qa{Describe qubit readout in the dispersive regime. How is frequency multiplexing used to read out multiple qubits through a single feedline?}{}
+  \item \qa{How can qubits be coupled together in the dispersive regime, and two-qubit gates implemented? What are the relevant energy scales?  }{}
+  \item \qa{How can additional energy levels be used to implement a CPhase gate?  }{}
+  \item \qa{What effect does charge noise have on the qubit properties and what steps have been taken to reduce those effects?}{}
+  \item \qa{What our noise sources affect superconducting qubits? }{}
+  \item \qa{Describe the scaling challenges.}{}
+\end{enumerate}
+
 \subsection*{Ion trap qubits}
+\begin{enumerate}
+\item \qa{What ingredients are needed to trap charged particles such as ions in vacuum?}{}
+\item \qa{Conceptually, in what types of internal state of the ion are qubits encoded?}{}
+\item \qa{What are the implications for addressing the qubits?}{}
+\item \qa{How is a register of ion trap qubits read out?}{}
+\item \qa{How does a laser field interact with a trapped ion? What possible transitions are allowed?}{}
+\item \qa{How does the two-qubit Cirac-Zoller gate work?}{}
+\item \qa{How are ions cooled to their motional ground state?}{}
+\item \qa{Discuss the scaling challenges.}{}
+\end{enumerate}
+
 \subsection*{Adiabatic quantum computing}
+\begin{enumerate}
+\item \qa{What is the central idea of adiabatic quantum computing? What determines the speed of adiabatic quantum computation?}{}
+\item \qa{Describe the class of problems that is commonly studied with prototype adiabatic quantum computers. How are these problems mapped onto a adiabatic quantum computer?}{}
+\item \qa{Describe the most common physical realization of adiabatic quantum computers. What is the state-of-the-art and how does it compare to other qubit approaches?}{}
+\item \qa{What is the current understanding of the quantum speed-up achieved by prototype adiabatic quantum computers? Why is there sometimes controversy around the claims made? }{}
+\item \qa{What is known about the power of future adiabatic quantum computers? How do they differ from today's prototypes?}{}
+\item \qa{What is the role of quantum coherence, entanglement and relaxation in adiabatic quantum computing?}{}
+\item \qa{Outline how the equivalent of Grover's algorithm can be run on a adiabatic quantum computer. Is the same speed-up achieved as with the circuit model? }{}
+
+
+\end{enumerate}
 
 \end{document}
