@@ -109,14 +109,14 @@
 
 \subsection*{Nitrogen vacancy qubits}
 \begin{enumerate}
-  \item \qa{How is the NV electron spin qubit formed?}{}
-  \item \qa{How can the NV electron spin be read out? How is it manipulated?}{}
-  \item \qa{How can we perform two-qubit gates between two NV electron spin qubits?}{}
-  \item \qa{What is the limiting decoherence mechanism for the NV electron spin qubit?}{}
-  \item \qa{What additional qubits can be provided within a single NV center? (N15/14,C13)}{}
-  \item \qa{How can we extend qubit coherence by DD? Why does this work?}{}
-  \item \qa{How can we (selectively) control a 13C nuclear spin by flipping the electron spin back and forth? How can we entangle the electron spin and a 13C spin?}{}
-  \item \qa{What are the main challenges in scaling up? What ideas exist for overcoming the challenges?}{}
+  \item \qa{How is the NV electron spin qubit formed?}{In a Carbon-13 diamond lattice two carbon atoms are removed and one of them is replaced by a Nitrogen-14 atom such that there is on free unbound electron spin and one excess nuclear spin in the lattice due to the vacancy and added nitrogen atom respectively.}
+  \item \qa{How can the NV electron spin be read out? How is it manipulated?}{The electron spin can be read-out using a laser that excites it from the ground state to an exited state after which it fluoresces, this fluorescence is what we see and measure. The resonant frequency of the laser depends on the spin state.}
+  \item \qa{How can we perform two-qubit gates between two NV electron spin qubits?}{Since the electron spin and the nuclear spin interact by the hyperfine interaction (at 2MHz) and the nuclear spin reacts to the electron spin electric field via quadrupole interaction if it is a 14N nuclear spin (-5 MHz). A two-qubit CNOT gate is then implemented by driving the nuclear spin at an interaction frequency such that the spin of the electron flips.}
+  \item \qa{What is the limiting decoherence mechanism for the NV electron spin qubit?}{It's the electron spin decoherence.}
+  \item \qa{What additional qubits can be provided within a single NV centre? (N15/14,C13)}{There can be two qubits total, one electron spin qutrit and one nuclear spin qubit or a nuclear spin qutrit depending on the nitrogen isotope, for N14 99.6\% abundance it is a qutrit (spin-1) and for N15 0.4\% abundance it is a qubit (spin-1/2).}
+  \item \qa{How can we extend qubit coherence by DD? Why does this work?}{Since a qubit picks up phase from the Carbon-13 nuclear spin bath's magnetic fields, which are highly random, it does not work if we only apply one pulse, so we apply many such pi pulses. This is dynamical decoupling from the environment.}
+  \item \qa{How can we (selectively) control a 13C nuclear spin by flipping the electron spin back and forth? How can we entangle the electron spin and a 13C spin?}{The evolution of the Carbon-13 nuclear spin depends on the electron spin in the controllable NV-centre by the hyperfine coupling between the spins. Thus, by changing the electron spin from zero to up or down we can tune the axis and rate of the nuclear spin change since these two axis don't commute we can completely control the rotation of the spin and entangle the nuclear spin with the electron spin. Different nuclear spins in the diamond lattice feel different electrical field strengths and thus precess at different rates, allowing selective control over any individual spins}
+  \item \qa{What are the main challenges in scaling up? What ideas exist for overcoming the challenges?}{The interaction that allows for control of multiple nuclear spins scales inversely with the distance cubed so it makes it hard to control many nuclear spins. But scaling up would look like ~50 nuclear spins coupled to a single defect and then coupling defects together by magnetic coupling. But this will be limited by: crosstalk, frequency crowding, fan-out or heating.}
 \end{enumerate}
 
 \subsection*{Superconducting qubits}
