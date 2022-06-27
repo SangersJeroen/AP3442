@@ -74,6 +74,12 @@
 \newcommand{\qa}[2]{#1\\ \textit{#2}}
 
 \begin{document}
+
+
+{\color{blue} The answers given below were \textbf{NOT} checked by TAs or the lecturers!\\
+Contribution would be welcomed by leaving a message here or on \href{https://github.com/SangersJeroen/AP3442}{ the repository (click here)}\\
+https://github.com/SangersJeroen/AP3442}
+
 \subsection*{Quantum dots}
 \begin{enumerate}[label=(\alph*)]
   \item \begin{enumerate}[label=(\roman*)]
@@ -151,7 +157,7 @@
 \subsection*{Adiabatic quantum computing}
 \begin{enumerate}
 \item \qa{What is the central idea of adiabatic quantum computing? What determines the speed of adiabatic quantum computation?}{That the solution of a hard problem is encoded in a Hamiltonian H1 and that the ground state of a different Hamiltonian H0 is easy to prepare, if these don't commute we can slowly vary the system from H0 to H1 and measure the end result to get the solution to the problem. The speed is determined by the smallest gap between eigenvalues, you need to vary the system slow enough that you stay in the ground state.}
-\item \qa{Describe the class of problems that is commonly studied with prototype adiabatic quantum computers. How are these problems mapped onto a adiabatic quantum computer?}{Combinatorial optimization problems, in which the solution is the function of a weighted bit string. These problems are classically NP hard. To solve the problem the input bit string is characterized by spins and the solution as an Ising hamiltonian}
+\item \qa{Describe the class of problems that is commonly studied with prototype adiabatic quantum computers. How are these problems mapped onto a adiabatic quantum computer?}{Combinatorial optimization problems, in which the solution is the function of a weighted bit string. These problems are classically NP hard. To solve the problem the input bit string is characterised by spins and the solution as an Ising hamiltonian}
 \item \qa{Describe the most common physical realization of adiabatic quantum computers. What is the state-of-the-art, and how does it compare to other qubit approaches?}{The most common implementation is with superconducting qubits with the qubit encoded in the clockwise or counter-clockwise flow of current. What's different is that the gates between qubits are made using other superconducting structures.}
 \item \qa{What is the current understanding of the quantum speed-up achieved by prototype adiabatic quantum computers? Why is there sometimes controversy around the claims made?}{The speed-up of the quantum algorithm is often compared to the classical alternative (quantum annealing vs classical annealing). People sometimes test on small problems and then extrapolate to bigger problems.}
 \item \qa{What is known about the power of future adiabatic quantum computers? How do they differ from today's prototypes?}{They want to implement non-stochastic hamiltonians which are then equivalent to the quantum circuit model.}
