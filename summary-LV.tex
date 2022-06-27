@@ -36,6 +36,7 @@
 \usepackage{tikz}
 \usepackage{algpseudocode,algorithm,algorithmicx}
 \usepackage{fontspec}
+\usepackage{braket}
 
 
 \setmainfont{Baskerville Light}[
@@ -121,30 +122,30 @@
 
 \subsection*{Superconducting qubits}
 \begin{enumerate}
-  \item \qa{Conceptually describe the transmon qubit, the role of its components and the relevant energy scales.}{}
-  \item \qa{How are modern superconducting made, and what do they look like?}{}
-  \item \qa{How is single-qubit control of transmon qubits achieved (three axis)?}{}
-  \item \qa{What is the most straightforward way of coupling two superconducting qubits?}{}
-  \item \qa{What is the Hamiltonian of a superconducting qubit plus resonator system? Which roles do microwave resonators play in superconducting qubit experiments, and which operating regimes do we distinguish?}{}
-  \item \qa{Explain the concept of the vacuum Rabi splitting and vacuum Rabi oscillations. }{}
-  \item \qa{Describe qubit readout in the dispersive regime. How is frequency multiplexing used to read out multiple qubits through a single feedline?}{}
-  \item \qa{How can qubits be coupled together in the dispersive regime, and two-qubit gates implemented? What are the relevant energy scales?  }{}
-  \item \qa{How can additional energy levels be used to implement a CPhase gate?  }{}
-  \item \qa{What effect does charge noise have on the qubit properties and what steps have been taken to reduce those effects?}{}
-  \item \qa{What our noise sources affect superconducting qubits? }{}
-  \item \qa{Describe the scaling challenges.}{}
+  \item \qa{Conceptually describe the transmon qubit, the role of its components and the relevant energy scales.}{A transmon qubit is a small superconducting circuit that is made up of an inductor made of two josephsons junctions, and, a capacitor. The inductor is nonlinear such that the energy levels of the oscillator are not evenly spaced, such that a two-level system can be made.}
+  \item \qa{How are modern superconducting made, and what do they look like?}{They are made on chips and look just like the traces on a normal circuit board. And are also made by etching and deposition.}
+  \item \qa{How is single-qubit control of transmon qubits achieved (three axis)?}{The qubit is controlled by driving using microwave frequency pulse, the X and Y rotations are implemented by using signals of different phases. A Z rotation is an effective extra phase picked up due to the slightly faster rotation around the quantization axis, this faster rotation is due to the change in the energies of the qubit levels that was tuned by changing the magnetic flux through the SQUID.}
+  \item \qa{What is the most straightforward way of coupling two superconducting qubits?}{Directly capacitively coupling them.}
+  \item \qa{What is the Hamiltonian of a superconducting qubit plus resonator system? Which roles do microwave resonators play in superconducting qubit experiments, and which operating regimes do we distinguish?}{The total Hamiltonian consist of the smaller Hamiltonians of the quantized field, the 2-level system, the electric dipole interaction, and dissipation terms. The microwave resonator lines are used to read-out qubits, mediate interactions between qubits, and, protect qubits from the continuum. Operating regimes we distinguish between are the dispersive and resonant regimes.}
+  \item \qa{Explain the concept of the vacuum Rabi splitting and vacuum Rabi oscillations. }{Since there are two levels that are on-resonance and the levels are coupled together we get an avoided crossing of the energy levels. Vacuum Rabi oscillations are the continuously emitting and reabsorbing of photons by the two-level system into the cavity.}
+  \item \qa{Describe qubit readout in the dispersive regime. How is frequency multiplexing used to read out multiple qubits through a single feedline?}{In the dispersive regime the existence of a photon in the qubit changes the resonance frequency of the resonator. We can then probe the qubit state by looking at the transmission of the resonator for certain frequencies. You can then probe multiple qubits together by having a common feedline capacitively coupled to qubit resonators.}
+  \item \qa{How can qubits be coupled together in the dispersive regime, and two-qubit gates implemented? What are the relevant energy scales?  }{They can be coupled together but coupling both qubits to a common resonator and the virtual states therein. This coupling causes new bonding and anti-bonding states, letting the states evolve under the new coupled hamiltonian you get an iSWAP gate. Energy scale is about 5GHz.}
+  \item \qa{How can additional energy levels be used to implement a CPhase gate?}{The higher excited states can be used to create anti-bonding to the } $\ket{11}$ \textit{ state by then adiabatically changing the flux this state is the only state that picks up an extra phase.}
+  \item \qa{What effect does charge noise have on the qubit properties and what steps have been taken to reduce those effects?}{Charge noise causes decoherence and can flip the state of the qubit. Researchers now mainly use the region in which the Josephson energy is 50 times larger than the charging energy, in this regime the qubit energy levels are flat.}
+  \item \qa{What our noise sources affect superconducting qubits?}{The noise effects the rate of dephasing of the system.}
+  \item \qa{Describe the scaling challenges.}{Mapping the feedlines on a 2D chip is getting impossible for bigger qubit chips.}
 \end{enumerate}
 
 \subsection*{Ion trap qubits}
 \begin{enumerate}
-\item \qa{What ingredients are needed to trap charged particles such as ions in vacuum?}{}
-\item \qa{Conceptually, in what types of internal state of the ion are qubits encoded?}{}
-\item \qa{What are the implications for addressing the qubits?}{}
-\item \qa{How is a register of ion trap qubits read out?}{}
-\item \qa{How does a laser field interact with a trapped ion? What possible transitions are allowed?}{}
-\item \qa{How does the two-qubit Cirac-Zoller gate work?}{}
-\item \qa{How are ions cooled to their motional ground state?}{}
-\item \qa{Discuss the scaling challenges.}{}
+\item \qa{What ingredients are needed to trap charged particles such as ions in vacuum?}{Time dependant electric fields originating from different electrodes.}
+\item \qa{Conceptually, in what types of internal state of the ion are qubits encoded?}{The levels are hyperfine split states in single atoms that can be excited with lasers.}
+\item \qa{What are the implications for addressing the qubits?}{Beams of light are steered onto specific ions such that there is limited crosstalk.}
+\item \qa{How is a register of ion trap qubits read out?}{By shining a green laser onto the ions. Ions with their internal S state occupied get pump to and excited state and then fluoresce when this excited state decays.}
+\item \qa{How does a laser field interact with a trapped ion? What possible transitions are allowed?}{The Hamiltonian of the ion consists of the motional state of the ion in the trap modelled by a harmonic oscillator and an effective two level system, the interaction is then described by an interaction hamiltonian that consists of terms coupling the travelling laser light and the two level system. The transitions allowed are from ground to excited state with or without changing motional state or from excited state to ground state with or without changing motional state. Going to a higher motional state goes via the blue sideband and going to a lower motional state goes via the red sideband.}
+\item \qa{How does the two-qubit Cirac-Zoller gate work?}{Having two ions in their motional ground state and being either excited or in the ground state for the qubit system. We can map the qubit system of one of the ions into the ions motional state, and then excite the qubit system into an auxiliary excited state and back so that it picks up a phase. Then remapping the motional state back to the qubit state we see a negation of sign if the original atom was in an excited qubit state.}
+\item \qa{How are ions cooled to their motional ground state?}{By means of doppler cooling, shooting a slightly redly detuned laser at the ion it only gets absorbed if the ion moves at the right velocity towards the laser, the ion then absorbs the photon and its momentum and slows down temporarily. Another way is by red sideband cooling in which the ion moves to an excited qubit lower motional state.}
+\item \qa{Discuss the scaling challenges.}{The scaling challenges are the designs of the traps to hold that many qubits?}
 \end{enumerate}
 
 \subsection*{Adiabatic quantum computing}
